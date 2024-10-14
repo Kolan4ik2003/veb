@@ -8,7 +8,6 @@
     <link rel="icon" href="1.png" type="image/png">
     <link rel="shortcut icon" href="1.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-
 </head>
 <body>
 
@@ -31,14 +30,17 @@
     <section>
         <h2>Авторизация</h2>
         <div class="auth-container">
+
+            <!-- Переключатель форм с использованием ссылок -->
             <div class="auth-toggle">
-                <button id="login-btn" class="active">Вход</button>
-                <button id="register-btn">Регистрация</button>
+                <a href="#login-form" class="toggle-link active">Вход</a>
+                <a href="#register-form" class="toggle-link">Регистрация</a>
             </div>
 
-            <div id="auth-form" class="login-form">
+            <!-- Форма для входа -->
+            <div id="login-form" class="auth-form">
                 <h3>Вход</h3>
-                <form id="login-form">
+                <form>
                     <label for="login-email">Email:</label>
                     <input type="email" id="login-email" required>
                     
@@ -49,7 +51,8 @@
                 </form>
             </div>
 
-            <div id="register-form" class="register-form hidden">
+            <!-- Форма для регистрации -->
+            <div id="register-form" class="auth-form hidden">
                 <h3>Регистрация</h3>
                 <form>
                     <label for="register-email">Email:</label>
@@ -100,25 +103,5 @@
         </div>
     </footer>
 
-    <script>
-        const loginBtn = document.getElementById('login-btn');
-        const registerBtn = document.getElementById('register-btn');
-        const authForm = document.getElementById('auth-form');
-        const registerForm = document.getElementById('register-form');
-
-        loginBtn.addEventListener('click', () => {
-            authForm.classList.remove('hidden');
-            registerForm.classList.add('hidden');
-            loginBtn.classList.add('active');
-            registerBtn.classList.remove('active');
-        });
-
-        registerBtn.addEventListener('click', () => {
-            authForm.classList.add('hidden');
-            registerForm.classList.remove('hidden');
-            loginBtn.classList.remove('active');
-            registerBtn.classList.add('active');
-        });
-    </script>
 </body>
 </html>

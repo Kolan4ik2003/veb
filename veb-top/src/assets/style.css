@@ -1,0 +1,570 @@
+/* Общие стили для body */
+body {
+    font-family: 'Lobster', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5dc;
+    color: #333;
+    font-size: 100%; /* Устанавливаем базовый размер текста */
+}
+button {
+    font-family: 'Lobster', sans-serif;
+}
+a {
+    text-decoration: none;
+    color: #ff69b4;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ff85c0;
+}
+
+/* Шрифты и отступы будут меняться в зависимости от размера экрана */
+@media (max-width: 768px) {
+    body {
+        font-size: 90%;
+    }
+}
+
+
+/* Стили для шапки */
+header {
+    background-color: #ff69b4;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-top h1 {
+    margin: 0;
+    font-size: 2.5rem; /* Адаптируем шрифт */
+}
+
+.header-top p {
+    margin: 5px 0 15px;
+    font-size: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin-bottom: 10px;
+    }
+}
+
+
+/* Стили для каталога */
+
+/* Центрирование заголовка */
+h2 {
+    text-align: center; /* Центрируем заголовок */
+    font-size: 28px;
+    margin-top: 20px;
+}
+
+/* Контейнер для карточек каталога */
+.catalog {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 100%;
+    padding-left: 20px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+}
+
+article {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 350px;
+    min-width: 300px;
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+@media (max-width: 1024px) {
+    .catalog {
+        justify-content: center;
+    }
+    
+    article {
+        width: 250px;
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .catalog {
+        flex-wrap: wrap;
+    }
+    
+    article {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Стили для заголовков карточек */
+article h3 {
+    margin-top: 0;
+    font-size: 20px; /* Увеличен размер заголовка карточки */
+}
+
+/* Изображение в карточке */
+article img {
+    width: 100%; /* Изображение заполняет всю ширину карточки */
+    height: 220px; /* Увеличена высота изображения */
+    object-fit: cover; /* Масштабирование изображения по карточке, сохраняя пропорции */
+    border-radius: 8px;
+}
+
+/* Текст в карточке */
+article p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px; /* Добавлен отступ сверху для текста */
+}
+
+
+
+
+/* Стили для подвала (футера) */
+footer {
+    background-color: #000; /* Черный фон */
+    color: #fff; /* Белый текст */
+    padding: 20px 0;
+}
+
+footer .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    footer .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+footer .footer-info {
+    flex: 1;
+    text-align: center;
+}
+
+
+footer .footer-links,
+footer .footer-social {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Центрирование содержимого */
+    flex-direction: column; /* Вертикальное выравнивание */
+    align-items: center; /* Центрирование содержимого */
+}
+
+footer .footer-links p,
+footer .footer-social p {
+    margin-bottom: 5px; /* Меньший отступ между заголовком и списком */
+    text-align: left; /* Выравнивание текста влево */
+    width: 100%; /* Задает ширину заголовка */
+    padding-left: 10px; /* Отступ слева */
+}
+
+footer .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+footer a {
+    color: #ffc0cb; /* Исходный цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+footer a:hover {
+    color: blue; /* Цвет текста при наведении */
+}
+
+section a {
+    color: #000000; /* Исходный цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+section a:hover {
+    color: #ffc0cb; /* Цвет текста при наведении */
+}
+
+
+
+
+
+
+
+
+
+/* Стили для страницы авторизации*/
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+.auth-toggle {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.auth-toggle .toggle-link {
+    flex: 1;
+    padding: 10px;
+    background-color: #ff69b4;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.auth-toggle .toggle-link.active,
+.auth-toggle .toggle-link:hover {
+    background-color: #ff85c0;
+}
+
+.auth-form {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    margin-top: 10px;
+    display: none; /* Форма скрыта по умолчанию */
+}
+
+.auth-form:target {
+    display: block; /* Отображаем форму, если её id соответствует #target */
+}
+
+.hidden {
+    display: none;
+}
+
+h3 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #ff85c0;
+}
+
+/* Основная карточка */
+.flower-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%; 
+    max-width: 900px; 
+    margin: 20px auto;
+    padding: 40px; 
+    background: linear-gradient(135deg, #fff0f6, #e6ccf3); 
+    border-radius: 20px; 
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Адаптивное изображение */
+.flower-image {
+    width: 100%; /* Заполнение всей ширины карточки */
+    height: auto; /* Автоматическая высота */
+    max-height: 600px; /* Увеличена максимальная высота изображения */
+    border-radius: 20px; 
+    margin-bottom: 30px;
+    border: 4px solid #ff69b4;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.flower-description {
+    text-align: center;
+    padding: 20px;
+}
+
+.flower-description h3 {
+    margin-top: 20px;
+    color: #ff69b4;
+    font-size: 30px; 
+}
+
+.flower-description p {
+    margin: 10px 0;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+.flower-description ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.price {
+    font-size: 40px; 
+    font-weight: bold;
+    color: #ff69b4;
+    text-align: center;
+    margin: 20px 0; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для кнопки */
+.add-to-cart {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 10px; 
+    padding: 15px 30px;
+    font-size: 20px; 
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.add-to-cart:hover {
+    background-color: #ff85c0; 
+    transform: scale(1.05);
+}
+
+/* Адаптивные стили для страницы контента */
+@media (max-width: 1024px) {
+    .flower-details {
+        padding: 20px;
+        max-width: 100%; 
+    }
+
+    .flower-image {
+        max-height: 400px;
+    }
+
+    .flower-description h3 {
+        font-size: 26px;
+    }
+
+    .flower-description p, .flower-description ul {
+        font-size: 16px;
+    }
+
+    .price {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .flower-details {
+        padding: 15px;
+    }
+
+    .flower-image {
+        max-height: 300px;
+    }
+
+    .flower-description h3 {
+        font-size: 22px;
+    }
+
+    .flower-description p, .flower-description ul {
+        font-size: 14px;
+    }
+
+    .price {
+        font-size: 26px;
+    }
+
+    .add-to-cart {
+        font-size: 18px;
+        padding: 12px 25px;
+    }
+}
+
+
+/* Поисковая строка */
+.search-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search-input {
+    font-family: 'Lobster', cursive;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px; /* Ограничиваем максимальную ширину */
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #ff4081;
+}
+
+.search-button {
+    font-family: 'Lobster', cursive;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #e91e63;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .search-input {
+        width: 100%; /* Полная ширина на экранах до 768px */
+        font-size: 16px; /* Немного уменьшен шрифт */
+    }
+
+    .search-button {
+        font-size: 16px; /* Уменьшен размер шрифта кнопки */
+        margin-left: 5px;
+        padding: 10px 15px; /* Немного уменьшены отступы */
+    }
+}
+
+@media (max-width: 480px) {
+    .search-input, .search-button {
+        width: 100%; /* В поисковой строке и кнопке по 100% ширины */
+        margin: 5px 0; /* Отступы сверху и снизу */
+    }
+
+    .search-button {
+        display: block; /* Кнопка будет под строкой поиска */
+        text-align: center;
+        padding: 10px; /* Сокращенные отступы для кнопки */
+    }
+}
+
+/* Корзина */
+.cart {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-table th, .cart-table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-table input[type="number"] {
+    width: 60px;
+    padding: 5px;
+}
+
+.remove-btn {
+    padding: 5px 10px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.remove-btn:hover {
+    background-color: #ff85c0;
+}
+
+.cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.checkout-btn {
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.checkout-btn:hover {
+    background-color: #ff85c0;
+}
