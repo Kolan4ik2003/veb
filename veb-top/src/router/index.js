@@ -21,8 +21,8 @@ const router = createRouter({
       component: AvtorizaView
     },
     {
-      path: '/content',
-      name: 'content',
+      path: '/content/:id',
+      name: 'content-info',
       component: ContentView
     },
     {
