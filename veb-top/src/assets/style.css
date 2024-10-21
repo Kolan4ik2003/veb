@@ -292,7 +292,8 @@ label {
     margin: 10px 0 5px;
 }
 
-input[type="email"],
+input[type="text"],
+input[type="tel"],
 input[type="password"] {
     width: 100%;
     padding: 10px;
@@ -567,4 +568,14 @@ button[type="submit"]:hover {
 
 .checkout-btn:hover {
     background-color: #ff85c0;
+}
+
+
+.error {
+    color: red;
+    font-size: 13px;
+}
+
+.has-error input {
+    border: 1px solid red;
 }

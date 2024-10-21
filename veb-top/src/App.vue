@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+
 </script>
 
 <template>
@@ -11,7 +11,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
         <nav>
             <ul>
-                <li><router-link to = "/home">Главная</router-link></li>
+                <li><router-link to = "/">Главная</router-link></li>
                 <li><router-link to = "/corzina">Корзина</router-link></li>
                 <li><router-link to = "/avtoriza">Личный кабинет</router-link></li>
             </ul>

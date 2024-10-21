@@ -1,4 +1,5 @@
 <script setup>
+import Catalog from '@/components/Sale/Catalog.vue';
 const catalogs = [
     {
         id : 1,
@@ -37,27 +38,38 @@ const catalogs = [
         price : 1500 
     }
 ]
+
+import {ref} from 'vue'
+const searchResult = ref('')
+const isShowSearch = ref(false)
+const search = () => {
+    isShowSearch.value = searchResult.value.length >= 3
+
+}
 </script>
 
 <template>
     <!-- Основная часть каталога -->
     <section>
         <h2>Каталог цветов</h2>
-
+        
         <!-- Поисковая строка -->
         <div class="search-container">
-            <input type="text" placeholder="Найти цветы..." class="search-input">
+            <input type="text" placeholder="Найти цветы..." v-model="searchResult" @keyup = "search" class="search-input">
             <button class="search-button">Поиск</button>
         </div>
 
-        <div class="catalog">
+        <div class="catalog" v-show="isShowSearch">
             <article v-for = "catalog in catalogs">
-                <h3>{{ catalog.nameverx }}</h3>   
-                <img src="https://avatars.mds.yandex.net/i?id=c50912e65ffec3d061bb9b5cdbe38a5b_l-9236689-images-thumbs&n=13" alt="Букет Роз" width="300">
-                <p><a><router-link :to="{name: 'content-info' , params: {id:catalog.id}} ">{{ catalog.name }} {{ catalog.price }}</router-link></a></p>
+                <Catalog :catalog = "catalog"/>
             </article>
+            
+                
 
-        </div>
+    </div>
+
     </section>
+    
+
 </template>
 
