@@ -40,7 +40,7 @@ const catalogs = [
     {
         id : 6,
         image : 'https://avatars.mds.yandex.net/get-yabs_performance/13451990/hat20708ce1c32cd9b9cadf363e32f9c5cc/hugeXX',
-        nameverx : "Хризантемы",
+        nameverx : "Chrysanthemums",
         name : "Чудесные белые хризантемы:",
         price : 1500 
     }
