@@ -17,7 +17,7 @@ return new class extends Migration
             $table->decimal('price');
             $table->string('description');
             $table->string('image_url');
-            $table->boolean('acteve')->default(false);
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

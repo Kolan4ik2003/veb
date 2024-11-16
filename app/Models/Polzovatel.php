@@ -13,6 +13,6 @@ class Polzovatel extends Model
         "user_id",
         "FIO",
         "phone_number",
-        "addres",
+        "adres",
     ];    
 }

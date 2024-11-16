@@ -13,19 +13,33 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+Route::prefix('products')->group(function(){
+    Route::get('', [\App\Http\Controllers\ProductController::class, 'list']);
+    Route::get('active', [\App\Http\Controllers\ProductController::class,'active']);
+    Route::get('{id}', [\App\Http\Controllers\ProductController::class, 'info']);
+    Route::post('', [\App\Http\Controllers\ProductController::class, 'create']);
+});
 
-Route::get('products', [App\Http\Controllers\ProductController::class, 'list']);
-Route::get('products/active', [App\Http\Controllers\ProductController::class,'active']);
-Route::get('products/{id}', [App\Http\Controllers\ProductController::class, 'info']);
+Route::prefix('orders')->group(function(){
+    Route::get('', [\App\Http\Controllers\OrdersController::class, 'list']);
+    Route::get('{id}', [\App\Http\Controllers\OrdersController::class, 'info']);
+    Route::post('', [\App\Http\Controllers\OrdersController::class, 'create']);
+});
 
-Route::get('orders', [App\Http\Controllers\OrdersController::class, 'list']);
-Route::get('orders/{id}', [App\Http\Controllers\OrdersController::class, 'info']);
+Route::prefix('polzovatel')->group(function(){
+    Route::get('', [\App\Http\Controllers\PolzovatelController::class, 'list']);
+    Route::get('{id}', [\App\Http\Controllers\PolzovatelController::class, 'info']);
+    Route::post('', [\App\Http\Controllers\PolzovatelController::class, 'create']);
+});
 
-Route::get('polzovatel', [App\Http\Controllers\PolzovatelController::class, 'list']);
-Route::get('polzovatel/{id}', [App\Http\Controllers\PolzovatelController::class, 'info']);
+Route::prefix('cart_items')->group(function(){
+    Route::get('', [\App\Http\Controllers\Cart_itemsController::class, 'list']);
+    Route::get('{id}', [\App\Http\Controllers\Cart_itemsController::class, 'info']);
+    Route::post('', [\App\Http\Controllers\Cart_itemsController::class, 'create']);
+});
 
-Route::get('cart_items', [App\Http\Controllers\Cart_itemsController::class, 'list']);
-Route::get('cart_items/{id}', [App\Http\Controllers\Cart_itemsController::class, 'info']);
-
-Route::get('order_items', [App\Http\Controllers\Order_itemsController::class, 'list']);
-Route::get('order_items/{id}', [App\Http\Controllers\Order_itemsController::class, 'info']);
+Route::prefix('order_items')->group(function(){
+    Route::get('', [\App\Http\Controllers\Order_itemsController::class, 'list']);
+    Route::get('{id}', [\App\Http\Controllers\Order_itemsController::class, 'info']);
+    Route::post('', [\App\Http\Controllers\Order_itemsController::class, 'create']);
+});

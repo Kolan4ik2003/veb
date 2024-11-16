@@ -3,30 +3,38 @@
 namespace App\Http\Controllers;
 
 use App\Models\Products;
-
-
+use Illuminate\Http\Request;
+use App\Services\ProductService;
 
 class ProductController extends Controller
 {
-    public function list()
+    public function list(ProductService $service)
     {
-        return Products::query()
-            ->get();
+        return $service->getProducts();
     }
 
     
-    public function active()
+    public function active(ProductService $service)
     {
-        return Products::query()
-            ->where("active", true)
-            ->get();
+        return $service->getProductsactive();
     }
 
-    public function info($id)
+    public function info($id, ProductService $service)
     {
-        return Products::query()
-            ->where("id", $id)
-            ->first();
+        return $service->getProductsById($id);
+    }
+
+    public function create(Request $request,ProductService $service)
+    {
+        $fields = $request->validate([
+            'name' => 'required|string|min:5',
+            'description' => 'nullable|string',
+            'image_url' => 'nullable|url',
+            'price' => 'required|numeric',
+            'active' => 'required|boolean',
+        ]);
+
+        return $service->create($fields);
     }
 
 }
