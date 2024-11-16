@@ -10,8 +10,9 @@ class Polzovatel extends Model
     protected $table = "polzovatels";
 
     protected $fillable = [
-        "username",
-        "password",
+        "user_id"
+        "FIO",
         "phone_number",
+        "addres",
     ];    
 }
