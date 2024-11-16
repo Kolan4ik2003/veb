@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('products', [App\Http\Controllers\ProductsController::class, 'list']);
-Route::get('products/gift', [App\Http\Controllers\ProductsController::class,'gift']);
-Route::get('products/{id}', [App\Http\Controllers\ProductsController::class, 'info']);
+Route::get('products', [App\Http\Controllers\ProductController::class, 'list']);
+Route::get('products/active', [App\Http\Controllers\ProductController::class,'active']);
+Route::get('products/{id}', [App\Http\Controllers\ProductController::class, 'info']);
 
 Route::get('orders', [App\Http\Controllers\OrdersController::class, 'list']);
 Route::get('orders/{id}', [App\Http\Controllers\OrdersController::class, 'info']);

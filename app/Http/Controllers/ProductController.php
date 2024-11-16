@@ -15,10 +15,10 @@ class ProductController extends Controller
     }
 
     
-    public function gift()
+    public function active()
     {
         return Products::query()
-            ->where("is_gift", true)
+            ->where("active", true)
             ->get();
     }
 

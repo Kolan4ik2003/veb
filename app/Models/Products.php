@@ -13,5 +13,10 @@ class Products extends Model
         "description",
         "image_url",
         "price",
+        "active",
+    ];
+    protected $casts = [
+        "price" => "double",
+        "active" => "bool",
     ];
 }
